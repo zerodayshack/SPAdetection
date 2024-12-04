@@ -1,5 +1,7 @@
 
-# This repository contains the code to replicate the work Multi-objective search to detect Software Performance anti-patterns (SPAs)
+# 
+This repository contains the code to replicate the work 
+_Multi-objective search to detect Software Performance anti-patterns (SPAs)_
 ## Overview of the approach
 ![image](approach.pdf)
 
