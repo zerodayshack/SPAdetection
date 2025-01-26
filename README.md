@@ -3,6 +3,10 @@
 This repository contains the code to replicate the work 
 
 _Multi-objective search to detect Software Performance anti-patterns (SPAs)_
+
+# SPA detection
+Execute NSGA-II to determine the optimal values of the parameters of the detection algorithms. It also provide the SPA instances. 
+
 # Overview of the approach
 ![image](Approach.pdf)
 # Requireemnts
@@ -46,8 +50,7 @@ detect_ramp.R
 detect_tj.R
 detect_cvr.R
 
-
+The utitlity file contains the functions to execute the measurement framework
 utilityFunctions.R
 
-# SPA detection
-Execute NSGA-II to determine the optimal values of the parameters of the detection algorithms. It also provide the SPA instances. 
+
