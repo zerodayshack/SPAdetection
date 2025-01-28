@@ -1,3 +1,4 @@
+#This file must be modified before submitting the paper
 library(stringr)
 library(gridExtra)
 library(grid)
@@ -18,7 +19,7 @@ library(RColorBrewer)
 # } else {
 #   directory <- args[1]
 # }
-directory<-"/Users/babsi/Desktop/GitHub/detection/"
+directory<-"../detection/"
   
 #Set patterns to search file
 experimentDirectory<-paste(directory, "Experiments/SockShop/", sep="")
