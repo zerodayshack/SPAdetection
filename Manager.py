@@ -4,7 +4,7 @@ import pandas as pd
 import csv
 from multiprocessing import Process
 
-path = "/Users/babsi/Research/Dropbox/Papers/Matteo/spa_search_detection-main/detection/"
+path = "../SPAdetection/"
 #tasks = ['GA_RP.py', 'GA_TJ.py', 'GA_AH.py', 'GA_CVR.py']
 tasks = ['GA_RP_E.py', 'GA_CVR_E.py', 'GA_TJ_E.py', 'GA_AH_E.py']
 options = [' -o all -s 50 -n 20 GA', ' -o all -s 50  RAND']
