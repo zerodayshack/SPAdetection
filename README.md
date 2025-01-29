@@ -8,7 +8,7 @@ _Multi-objective search to detect Software Performance anti-patterns (SPAs)_
 Execute NSGA-II to determine the optimal values of the parameters of the detection algorithms. It also provide the SPA instances. 
 
 # Overview of the approach
-![image](Approach.pdf)
+![image](Approach.png)
 # Requireemnts
 
 # Project structure
@@ -40,19 +40,46 @@ Execute NSGA-II to determine the optimal values of the parameters of the detecti
 
 Python
 
-_Maneger.py_ masters the execution of the Genetic Algoritm for each SPA considered. 
-It calls the corresponding Python files: 
+_Maneger.py_ masters the execution of MOGA for each SPA considered. 
+
+_Required libraries_
+os
+pymoo
+pandas
+csv
+multiprocessing
+
+It calls the Python files: 
 'GA_RP.py', 'GA_TJ.py', 'GA_AH.py', 'GA_CVR.py'. 
-The 'path' field points to the folder in which these files are.
 
-The files to run MOGA for each SPA:
-_GA_RP.py_ Code to run the Genetic algorithm and determine the Pareto Front for the Ramp (RP) antipattern
-_GA_CVR.py_ Code to run the Genetic algorithm and determine the Pareto Front for the Contiuous Violations Requirement (CVR) antipattern
-_GA_TJ.py_ Code to run the Genetic algorithm and determine the Pareto Front for the Traffic Jam (TJ) antipattern
-_GA_AH.py_ Code to run the Genetic algorithm and determine the Pareto Front for the Application Hiccups (AH) antipattern
+The 'path' field needs points to the folder of the project.
 
+The files to run MOGA for each SPA are:
 
-The Python files repeatedly call the following R files that perform the actual SPA detection:
+_Required libraries_
+random
+pandas 
+argparse
+numpy 
+pymoo
+matplotlib.pyplot
+csv
+subprocess 
+
+_GA_RP.py_ Code to run MOGA and RS and determine the Pareto Front and Dominance Set respectively for the Ramp (RP) antipattern
+
+_GA_CVR.py_ Code to run MOGA and RS and determine the Pareto Front and Dominance Set respectively  for the Contiuous Violations Requirement (CVR) antipattern
+
+_GA_TJ.py_ Code to run MOGA and RS and determine the Pareto Front and Dominance Set respectively for the Traffic Jam (TJ) antipattern
+
+_GA_AH.py_ Code to run MOGA and RS and determine the Pareto Front and Dominance Set respectively for the Application Hiccups (AH) antipattern
+
+The ranges that define the Design space are hard coded in each of he above files. 
+The services of Sock Shop are hard coded in each of the above files
+
+The utility file _utilitFunctions.py contains all the fucnstions used in the above files 
+
+Each of the above Python files  calls the corresponding R file below
 
 R
 
@@ -75,7 +102,8 @@ detect_ramp.R
 detect_tj.R
 detect_cvr.R
 
-The utitlity file contains the functions to execute the measurement framework
-utilityFunctions.R
+The utility file contains the functions to execute the measurement framework
+_utilityFunctions.R and creates the datasets list used in the R files
+Loads are hard coded in this file.
 
 
