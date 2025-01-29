@@ -11,6 +11,30 @@ Execute NSGA-II to determine the optimal values of the parameters of the detecti
 ![image](Approach.pdf)
 # Requireemnts
 
+# Project structure
+SPAdetection/
+├── datasets/
+│   └── dataset_300.csv
+│   └── dataset_250.csv
+│   └── dataset_200.csv
+│   └── dataset_150.csv
+│   └── dataset_100.csv
+│   └── dataset_50.csv
+│   └── dataset_2.csv
+├── Manager.py
+├── GA_RP.py
+├── GA_TJ.py
+├── GA_CVR.py
+├── GA_AH.py
+├── utilityFunctions.py
+├── detect_ramp.R
+├── detect_tj.R
+├── detect_cvr.R
+├── detect_hiccup.R
+├── utilityfunctions.R
+└── README.md
+
+
 #Files
 
 Python
