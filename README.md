@@ -7,10 +7,6 @@ _Multi-objective search to detect Software Performance anti-patterns (SPAs)_
 # SPA detection
 Execute NSGA-II to determine the optimal values of the parameters of the detection algorithms. It also provide the SPA instances. 
 
-# Overview of the approach
-![image](Approach.png)
-# Requireemnts
-
 # Project structure
 ```SPAdetection/
 
@@ -106,4 +102,7 @@ The utility file contains the functions to execute the measurement framework
 _utilityFunctions.R and creates the datasets list used in the R files
 Loads are hard coded in this file.
 
+# Overview of the approach
+![image](Approach.png)
+# Requireemnts
 
