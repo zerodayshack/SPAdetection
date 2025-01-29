@@ -101,5 +101,5 @@ Loads are hard coded in this file.
 
 # Data collection
 The datasets in this project have been collected with PPTAM https://github.com/pptam/pptam-tool.  
-The tools has collected the response times of the operations of Sock Shop demo https://github.com/ocp-power-demos/sock-shop-demo.  
+The tool has collected the response times of the operations of Sock Shop demo https://github.com/ocp-power-demos/sock-shop-demo.  
 The data contained in the .xan output files have been preprocessed and included in the datasets folder 
