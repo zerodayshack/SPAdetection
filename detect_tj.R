@@ -42,9 +42,9 @@ if (length(args) != 6) {
 # widthB=5
 
 #Set your directory
-setwd("~/../SPAdetection")
-#set code directory
-directory <- file.path(paste(getwd(), "/GitHub/detection",sep=""), fsep = .Platform$file.sep)
+setwd("~/")
+#Set code directory
+directory <- file.path(paste(getwd(), "../SPAdetection",sep=""), fsep = .Platform$file.sep)
 
 #clean console
 #rm(list=ls())
@@ -62,7 +62,7 @@ source(paste(directory,"/utilityFunctions.R", sep=""))
 thresholds3SDList<-apply(datasets[[baselineValue]],2,function(x){mean(as.numeric(x))+3*sd(as.numeric(x))})
 
 #create a fresh new file with the text results
-if(file.exists(paste(experimentDir, "results_telecom.txt", sep=""))){file.remove(paste(experimentDir, "results_telecom.txt", sep=""))}
+if(file.exists(paste(experimentDir, "results.txt", sep=""))){file.remove(paste(experimentDir, "results_telecom.txt", sep=""))}
 
 #compute CVR antipattern first
 computeCVR <- function(serviceName,datasets,load, pi,rho,widthB,prop) {
