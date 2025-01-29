@@ -42,7 +42,7 @@ if (length(args) != 6) {
 # widthB=5
 
 #Set your directory
-setwd("~/Desktop")
+setwd("~/../SPAdetection")
 #set code directory
 directory <- file.path(paste(getwd(), "/GitHub/detection",sep=""), fsep = .Platform$file.sep)
 
