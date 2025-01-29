@@ -73,7 +73,7 @@ Each of the above Python files  calls the corresponding R file below
 
 R  
 
-_Required libraries_
+_Required libraries_  
 library(stringr)  
 library(gridExtra)  
 library(grid)  
@@ -96,7 +96,7 @@ The utility file contains the functions to execute the measurement framework
 _utilityFunctions.R_ and creates the datasets list used in the R files
 Loads are hard coded in this file.  
 
-# Overview of the approach
+# Overview of the approach  
 ![image](Approach.png)
 
 # Data collection
