@@ -1,3 +1,6 @@
+#Define all functions needed for executing SPA detection in R
+#Creates the datasets list that is used in the detect files
+
 library(stringr)
 library(gridExtra)
 library(grid)
@@ -13,36 +16,30 @@ library(RColorBrewer)
 
 
 #FUNCTIONS
-#use library patchwork to combine multiple plots in one figure
-#install.packages("patchwork")
 
-#Create the datasets
-
-#read dataset files and split into chunks of measurements according to Faban output. Identify "4th" element as Response Time.
-preprocessData<-function(experimentDir, pattern, dataFileList){
-  filePath<-dataFileList[grep(paste("^","datasets/dataset_",pattern, sep=""),dataFileList)]
-  datasetTemp<-readLines(paste(experimentDir,"/",filePath, sep=""))
-  t<-"Section:"
-  factors<-grep(t,datasetTemp)
-  datasetFF <-as.data.frame(split(datasetTemp, cumsum(1:length(datasetTemp) %in% factors))[[4]])
+#Create the datasets list in the R project. 
+#Patterns must have character values
+directory<-here::here()
+Loads<-c("50","100","150","200","250","300")
+baselineValue<-"2"
+patterns<-c(baselineValue,Loads)
+datasetsCreation<-function(directory,Loads,baselineValue){
+  #Find csv files in project directory
+  dataFileList <- dir(directory, pattern = ".csv", include.dirs=T, recursive = T)
   
-  #print(datasetFF[[1]][1])
-  
-  datasetFF<-datasetFF[-c(1:2,4),]
-  headers<-unlist(strsplit(str_replace_all(datasetFF[1],"\\p{WHITE_SPACE}+", ","), ","))[-2]
-  datasetF<-datasetFF[-1]
-  out<-str_split(unlist(lapply(datasetF,function(x){str_replace_all(x, "\\p{WHITE_SPACE}+", ",")})), ",")[-c(374,375)]
-  temp<-NULL
-  for(i in 1:20){
-    temp<-cbind(temp,sapply(out, "[", i))
+  filePath<-c()
+  for(i in 1:length(patterns)){
+    #datasets are named with corresponding laod value in datasets forlder
+    filePath[i]<-dataFileList[grep(paste(patterns[i],".", sep=""),fixed=TRUE,dataFileList)]
   }
-  colnames(temp)<-headers
-  temp<-as.data.frame(temp)
-  temp<-temp[-c(1:12),]
-  temp$Time<-as.numeric(as.character(temp$Time))-60
-  return(temp)
+  datasets<-list()
+  for(i in patterns){
+    k<-which(c(baselineValue,Loads)==i)
+    datasets[[i]]<-read.csv(paste(directory,"/",filePath[k], sep=""), header=TRUE, sep=";")
+  }
+  return(datasets)
 }
-
+datasets<-datasetsCreation(directory,Loads,baselineValue)
 
 #score for the pattern evaluation
 score <- function(a, b) {
@@ -116,5 +113,4 @@ myPlotCumDist<-function(bucket, rho, pi){
   text(min(bucket$respTime)+0.0001,round(invRho,2)+0.015, round(invRho,2))
   text(round(invPi,4),min(cumProb), round(invPi,4))
   }
-
 
