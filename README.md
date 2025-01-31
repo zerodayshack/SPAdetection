@@ -34,14 +34,14 @@ SPAdetection/
 
 # Files
 
-Python
+Python verison 3.8.15
 
 _Maneger.py_ masters the execution of the Multi-Objective Genetic Algorithm (MOGA) for each SPA considered. 
 
 _Required libraries_
 os
-pymoo
-pandas
+pymoo Version: 0.6.0.1
+pandas 1.5.3
 csv
 multiprocessing
 
@@ -71,20 +71,20 @@ The services of Sock Shop are hard coded in each of the above files
 The utility file _utilitFunctions.py_ contains all the fucnstions used in the above files  
 Each of the above Python files  calls the corresponding R file below  
 
-R  
+R version 4.3.1 (2023-06-16)
+Platform: aarch64-apple-darwin20 (64-bit)
 
 _Required libraries_  
-library(stringr)  
-library(gridExtra)  
-library(grid)  
-library(here)  
-library(Rmpfr)  
-library(xtable)  
-library(nls2)  
-library(readxl)  
-library(optparse)  
-library(ggplot2)  
-library(RColorBrewer)  
+library(stringr)  1.5.0
+library(gridExtra)  2.3
+library(grid)  4.3.1
+library(here)  1.0.1
+library(Rmpfr)   0.9.3
+library(nls2)  0.3.3
+library(readxl)  1.4.3
+library(optparse)  1.7.3
+library(ggplot2)  3.4.4
+library(RColorBrewer)  1.1.3
 
 _files_  
 detect_hiccup.R  
