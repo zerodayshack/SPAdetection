@@ -34,13 +34,13 @@ SPAdetection/
 
 # Files
 
-Python verison 3.8.15
+Python  3.8.15
 
 _Maneger.py_ masters the execution of the Multi-Objective Genetic Algorithm (MOGA) for each SPA considered. 
 
 _Required libraries_
 os
-pymoo Version: 0.6.0.1
+pymoo  0.6.0.1
 pandas 1.5.3
 csv
 multiprocessing
@@ -54,10 +54,10 @@ The files to run MOGA for each SPA are:
 
 _Required libraries_  
 random  
-pandas   
+pandas  1.5.3 
 argparse  
 numpy  
-pymoo  
+pymoo  0.6.0.1
 matplotlib.pyplot  
 csv  
 subprocess  
