@@ -2,10 +2,10 @@
 # 
 This repository contains the code to replicate the work 
 
-_Multi-objective search to detect Software Performance anti-patterns (SPAs)_
+_Multi-objective search to detect Software Performance anti-patterns (SPAs)_ B. Russo, M. Camilli, A. Janes. A. Avritzer
 
 # SPA detection
-Execute NSGA-II to determine the optimal values of the parameters of the detection algorithms. It also provide the SPA instances. 
+Execute the multi-objective genetic algorithm NSGA-II to determine the optimal values of the parameters of detection algorithms. It also provide the SPA instances. Detection algorithms are defined per single Software Performance Antipattern (SPA). Compares the resulting algorithms with the ones determined with a random search. 
 
 # Project structure
 ```
