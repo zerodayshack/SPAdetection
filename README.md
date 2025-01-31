@@ -36,7 +36,7 @@ SPAdetection/
 
 Python
 
-_Maneger.py_ masters the execution of MOGA for each SPA considered. 
+_Maneger.py_ masters the execution of the Multi-Objective Genetic Algorithm (MOGA) for each SPA considered. 
 
 _Required libraries_
 os
